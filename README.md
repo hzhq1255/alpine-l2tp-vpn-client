@@ -1,4 +1,5 @@
 alpine-l2tp-vpn-client
+> forked from https://github.com/WUAmin/alpine-l2tp-vpn-client
 ---
 ![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/wuamin/alpine-l2tp-vpn-client)
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/wuamin/alpine-l2tp-vpn-client)
@@ -44,8 +45,8 @@ docker run --rm -it --privileged \
            -e VPN_PSK \
            -e VPN_USERNAME \
            -e VPN_PASSWORD \
-           -e SCOKS5_ENABLE \
-           -p ${SCOKS5_PORT}:1080 \
+           -e VPN_SCOKS5_ENABLE \
+           -p ${VPN_SCOKS5_PORT}:1080 \
               wuamin/alpine-l2tp-vpn-client
 ```
 
