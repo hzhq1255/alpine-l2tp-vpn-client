@@ -36,13 +36,13 @@ else
   echo "startup/vpn: Ignore vpn client."
 fi
 
-# Run socks5 server after 10 Seconds if SCOKS5_ENABLE is 1
-if [[ $VPN_SCOKS5_ENABLE -eq 1 ]];then
+# Run socks5 server after 10 Seconds if SOCKS5_ENABLE is 1
+if [[ $VPN_SOCKS5_ENABLE -eq 1 ]];then
   echo "startup/socks5: waiting for ppp0"
   (while ! route | grep ppp0 > /dev/null; do sleep 1; done \
-    && echo "startup/socks5: Socks5 will start in $VPN_SCOKS5_START_DELAY seconds" \
-    && sleep $VPN_SCOKS5_START_DELAY \
-    && sockd -N $VPN_SCOKS5_FORKS) &
+    && echo "startup/socks5: Socks5 will start in $VPN_SOCKS5_START_DELAY seconds" \
+    && sleep $VPN_SOCKS5_START_DELAY \
+    && sockd -N $VPN_SOCKS5_FORKS) &
 else
   echo "startup/socks5: Ignore socks5 server."
 fi
